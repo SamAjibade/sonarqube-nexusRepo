@@ -43,5 +43,20 @@ pipeline {
                 version: '1.0-SNAPSHOT'
             }
         }
+
+        stage('Deploy to Tomcat') {
+            steps {
+                deploy adapters: [
+                    tomcat9(
+                        alternativeDeploymentContext: '',
+                        credentialsId: 'tomcat',
+                        path: '',
+                        url: 'http://34.205.131.64:8080/'
+                    )
+                ],
+                contextPath: 'myapp',
+                war: 'SampleWebApp/target/SampleWebApp.war'
+            }
+        }
     }
 }
