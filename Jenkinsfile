@@ -13,15 +13,17 @@ pipeline {
                 sh 'cd SampleWebApp && mvn test'
             }
         }
-
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh '''
-                    cd SampleWebApp && mvn sonar:sonar \
-                      -Dsonar.projectKey=SampleWebApp \
-                      -Dsonar.projectName=SampleWebApp
-                    '''
+stage('SonarQube Analysis') {
+    steps {
+        withSonarQubeEnv('SonarQube') {
+            sh '''
+            cd SampleWebApp && mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+              -Dsonar.projectKey=SampleWebApp \
+              -Dsonar.projectName=SampleWebApp
+            '''
+        }
+    }
+}
                 }
             }
         }
