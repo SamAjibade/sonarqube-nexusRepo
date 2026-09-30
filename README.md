@@ -226,6 +226,8 @@ sudo systemctl restart tomcat9
 
 ![Deployed web application](docs/screenshots/tomcat-deployed-webapp.png)
 
+![Tomcat Manager application](docs/screenshots/tomcat-manager.png)
+
 ## Final Result
 
 The final Jenkins run completed successfully. The pipeline built the application, ran tests, analyzed the project with SonarQube, uploaded the WAR file to Nexus, and deployed the application to Tomcat.
@@ -461,6 +463,7 @@ Terraform generated local state files and `.terraform` folders.
 | Nexus repository online | ![Nexus repositories](docs/screenshots/nexus-repositories-online.png) |
 | Nexus artifact uploaded | ![Nexus artifact](docs/screenshots/nexus-snapshot-artifact-uploaded.png) |
 | Tomcat web app deployed | ![Tomcat deployed app](docs/screenshots/tomcat-deployed-webapp.png) |
+| Tomcat Manager enabled | ![Tomcat Manager](docs/screenshots/tomcat-manager.png) |
 | Jenkins deployment stage successful | ![Jenkins deployment](docs/screenshots/jenkins-tomcat-deploy-stage.png) |
 
 ## What I Learned
@@ -493,4 +496,5 @@ This was a learning project. In a production environment, I would improve it by:
 ## Status
 
 Project completed successfully. The CI/CD pipeline now builds, tests, scans, stores, and deploys the Java web application automatically.
+
 
